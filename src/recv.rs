@@ -222,6 +222,8 @@ impl Receiver<Unconnected> {
     /// Checks for a pending OSC packet and returns `Ok(Some)` if there is one waiting along with
     /// the source address.
     ///
+    /// When called, this method will pop a message from the receiver's queue.
+    ///
     /// If there are no packets waiting (or if the inner UDP socket's `recv` method returns an
     /// error) this will immediately return with `Ok(None)`.
     ///
